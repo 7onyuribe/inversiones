@@ -3,33 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prueba de Reporte Power BI - Inversiones</title>
+    <title>Visor de Inversiones - IOARR BIM</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            margin: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 10px;
         }
-        h1 { color: #333; }
+        h1 { 
+            color: #1a3a5a; 
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        p { 
+            color: #666; 
+            text-align: center; 
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        /* Contenedor responsivo */
         .contenedor-reporte {
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            border-radius: 8px;
+            width: 100%;
+            max-width: 1200px; /* Tamaño máximo en PC */
+            position: relative;
             overflow: hidden;
+            padding-top: 56.25%; /* Relación de aspecto 16:9 */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 12px;
             background-color: #fff;
+        }
+        .contenedor-reporte iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        /* Ajustes para móviles */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.2rem; }
+            body { padding: 5px; }
+            .contenedor-reporte { padding-top: 75%; /* Un poco más alto en móviles si es necesario */ }
         }
     </style>
 </head>
 <body>
 
     <h1>Visor de Proyectos de Inversión 2.0</h1>
-    <p>Estado actual de proyectos: HELIBALDES, PURISUNCHU, SIPAN, KUNTUR.</p>
+    <p>Seguimiento de: HELIBALDES, PURISUNCHU, SIPAN, KUNTUR y más.</p>
 
     <div class="contenedor-reporte">
-
-<iframe title="INVERSIONES2.0" width="1140" height="541.25" src="https://app.fabric.microsoft.com/reportEmbed?reportId=182f3bf9-5bd9-4731-979b-7cbddcef4be4&autoAuth=true&ctid=33585b28-f865-4b1a-bf57-8205177def6c" frameborder="0" allowFullScreen="true"></iframe>    </div>
+        <iframe 
+            title="INVERSIONES2.0" 
+            src="https://app.fabric.microsoft.com/reportEmbed?reportId=182f3bf9-5bd9-4731-979b-7cbddcef4be4&autoAuth=true&ctid=33585b28-f865-4b1a-bf57-8205177def6c" 
+            allowFullScreen="true">
+        </iframe>
+    </div>
 
 </body>
 </html>
